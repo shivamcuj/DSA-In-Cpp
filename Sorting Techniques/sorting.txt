@@ -1,0 +1,66 @@
+1.Selection Sort 
+- Select the minimum and put it on the starting position
+
+Ex : arr[] = [13,46,24,52,20,9]
+So The process is :
+
+no.1:
+find the minimum in this array, i.e., 9 and now replace it with starting position of array which is index 0 
+
+so now the array is [9,46,24,52,20,13]
+now 1 element is at its perfect position.
+now go to next minimum element in this array :
+[9 | 46,24,52,20,13]
+
+no.2:
+so in this array the min value is 13.
+
+so replace it with first element
+
+new array : [9,13 | 24,52,20,46]
+
+no.3:
+find smallest in array which is 20.
+
+add it to the starting position of the array:
+new array: [9,13,20 | 52,24,46]
+
+no.4:
+find smallest : 24
+swap with initial position
+
+new array : [9,13,20,24 | 52,46]
+
+no.5: 
+find smallest : 46
+swap with initial position
+
+new array : [9,13,20,24,46 | 52]
+--------------------------------
+now array is left with only 1 element, so it is guranteed that it is in right place.
+
+Observation :
+we tried to find minimum in array 5 times when element in array was 6.
+=> for n elements we need to do this process n-1 times
+
+Pseudocode:
+
+for(i=0;i<n-1;i++){
+    min = i
+    for(j=i;j<=n-1;j++){     // ye i ki value se shuru krega and end tak ke sare elements me compare karega 
+     if(arr[j]<arr[min]){
+        min = j
+     }
+    //here we will write the code of swapping use third variable
+    temp = arr[min]
+    arr[min]= arr[j]
+    arr[j]=temp
+
+   }  
+}
+
+so this is my whole logic.
+
+
+
+2.Bubble Sort
